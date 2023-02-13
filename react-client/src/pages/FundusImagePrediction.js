@@ -16,8 +16,8 @@ function FundusImagePrediction(props) {
   const [isSave, setIsSave] = useState(true);
   const [eye,setEye] = useState('0');
   const [prdmsg,setPrdmsg] = useState('Not yet Predicted');
-
-  const data = new FormData();
+  const [date,setDate] = useState("");
+  const [ivDate, setIvDate] = useState(false);
 
   useEffect(() => {
     if (!image) return;
@@ -34,10 +34,20 @@ function FundusImagePrediction(props) {
     setUpldmsg('Predicting')
     toast.info('Prediction in progress');
 
+    const data = new FormData();
+
     data.append('file', image);
     data.append('id', props.id);
 
-    if(isSave===true) data.append('save', "yes");
+    if(isSave===true){
+      if(date===""){
+        toast.info('Date not selected');
+        setIvDate(true);
+        return;
+      }
+      data.append('save', "yes");
+      data.append('date', date);
+    }
     else data.append('save', "no");
 
     if(eye==='0') data.append('eye', eye);
@@ -74,6 +84,17 @@ function FundusImagePrediction(props) {
                     </div>
                     <input id="imgs" type="file" accept="image/*" onChange={(e)=>setImage(e.target.files[0])} />
                 </div>
+
+                <Form.Group className="mb-3 pad" controlId="date" style={{width:"100%"}}>
+                  <Form.Label>Date of Image taken</Form.Label>
+                  <Form.Control type='date' placeholder='Date of Image taken' isInvalid={ivDate} onChange={(e)=>{setDate(e.target.value);setIvDate(false);}}/>
+                  <Form.Text className="text-muted">
+                    Will be ignored If chosen not to save in database.
+                  </Form.Text>
+                  <Form.Control.Feedback type="invalid">
+                    Please select a Date.
+                  </Form.Control.Feedback>
+                </Form.Group>
 
                 <Form.Group className="mb-3 pad" controlId="issave" style={{width:"100%"}}>
                   <Form.Label>Save to Database Online</Form.Label>
