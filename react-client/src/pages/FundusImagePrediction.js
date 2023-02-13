@@ -36,8 +36,8 @@ function FundusImagePrediction(props) {
 
     const data = new FormData();
 
-    data.append('file', image);
-    data.append('id', props.id);
+    data.append('file', image);//
+    data.append('id', props.id);//
 
     if(isSave===true){
       if(date===""){
@@ -45,20 +45,20 @@ function FundusImagePrediction(props) {
         setIvDate(true);
         return;
       }
-      data.append('save', "yes");
-      data.append('date', date);
+      data.append('save', "yes");//
+      data.append('date', date);//
     }
     else data.append('save', "no");
 
     if(eye==='0') data.append('eye', eye);
-    else data.append('eye', eye);
+    else data.append('eye', eye);//
 
     fetch('/upload', {
       method: 'POST',
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-        if(body.prediction==='Glaucoma') setPrdmsg('Glaucoma Detected');
+        if(body.prediction==='Glaucoma') setPrdmsg('Glaucoma Detected');//
         else setPrdmsg('Glaucoma Detected');
       });
     });
@@ -73,10 +73,10 @@ function FundusImagePrediction(props) {
         <SNavbar setId={props.setId}/>
         <div className='wrap-main'>
             <h3>Predict Based on Fundus Image</h3>
-            <Form className='pad'>
-                <Image className='imgpad'
+            <Image className='imgpad'
                     src={image ? imageUrl : ImageIcon}
-                />
+            />
+            <Form className='pad'>
 
                 <div className="upload-btn">
                     <div className="uploadimage">
