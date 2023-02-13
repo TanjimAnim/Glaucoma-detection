@@ -140,7 +140,7 @@ function Home(props) {
         >Register</ToggleButton>
       </ButtonGroup>
 
-      <Form className={signSelect?"pad":"no-display"}>
+      <Form className={signSelect?"pad wi":"no-display"}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" isInvalid={vemail} value={email} onChange={e=>setEmail(e.target.value)}/>
@@ -160,8 +160,8 @@ function Home(props) {
           </Form.Control.Feedback>
         </Form.Group>
 
-        <Button variant="primary" type="submit" onClick={loginB} size="lg">
-          Submit
+        <Button variant="primary" type="submit" onClick={loginB} size="lg" style={{width:"50%", marginLeft:"auto", marginRight:"auto"}}>
+          Log In
         </Button>
       </Form>
       
@@ -201,14 +201,13 @@ function Home(props) {
           </Form.Select>
         </Form.Group>
 
-        <Button variant="primary" type="submit" onClick={register} size="lg">
-          Submit
+        <Button variant="primary" type="submit" onClick={register} size="lg" style={{width:"50%", marginLeft:"auto", marginRight:"auto"}}>
+          Register
         </Button>
       </Form>
 
       </div>
 
-      
     </>
   )
 }
