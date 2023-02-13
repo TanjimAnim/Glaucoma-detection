@@ -41,7 +41,8 @@ def register_user():
 
     return jsonify({
         "id": new_user.id,
-        "email": new_user.email
+        "email": new_user.email,
+        "error": "none"
     })
 
 @app.route("/login", methods=["POST"])
@@ -61,7 +62,8 @@ def login():
 
     return jsonify({
         "id": user.id,
-        "email": user.email
+        "email": user.email,
+        "error": "none"
     })
 
 

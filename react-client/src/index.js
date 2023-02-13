@@ -6,6 +6,9 @@ import Login from './components/Login_signUp/Login';
 import SignUp from './components/Login_signUp/SignUp';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom"
+import RouteContainer from './RouteContainer';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +22,18 @@ root.render(
            <Route path='/home' element={<Home />} /> 
           <Route path='/app' element={<App/>} />
       </Routes>
+      <ToastContainer
+      position="top-right"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="colored" />
+      <RouteContainer/>
     </BrowserRouter>
   </>
 );
