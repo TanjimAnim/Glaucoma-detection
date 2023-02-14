@@ -1,0 +1,12 @@
+.text{
+    font-family: 'Courier New', Courier, monospace;
+}
+.title{
+    font-family: cursive;
+    color: rgb(174, 208, 197);
+}
+/* .card-body{
+    width: '18rem';
+    background-color: aqua;
+    
+}  */

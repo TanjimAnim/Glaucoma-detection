@@ -82,7 +82,7 @@ function FundusImagePrediction(props) {
     <>
         <SNavbar setId={props.setId}/>
         <div className='wrap-main'>
-            <h3>Predict Based on Fundus Image</h3>
+            <h3 className='header'>Predict Based on Fundus Image</h3>
             <Image className='imgpad'
                     src={image ? imageUrl : ImageIcon}
             />
