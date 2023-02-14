@@ -7,6 +7,7 @@ import Image from 'react-bootstrap/Image'
 import { toast } from 'react-toastify';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
+import { useNavigate } from 'react-router-dom';
 
 function FundusImagePrediction(props) {
 
@@ -18,6 +19,9 @@ function FundusImagePrediction(props) {
   const [prdmsg,setPrdmsg] = useState('Not yet Predicted');
   const [date,setDate] = useState("");
   const [ivDate, setIvDate] = useState(false);
+  const [prdmsgvar, setprdmsgvar] = useState('primary');
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!image) return;
@@ -26,6 +30,12 @@ function FundusImagePrediction(props) {
 
   let predict = e =>{
     e.preventDefault();
+
+    if(props.id===''){
+      navigate('/');
+      return;
+    }
+
     if(!image){
       toast.info('Please Upload an Image first');
       return;
@@ -58,8 +68,8 @@ function FundusImagePrediction(props) {
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-        if(body.prediction==='Glaucoma') setPrdmsg('Glaucoma Detected');//
-        else setPrdmsg('Glaucoma Detected');
+        if(body.prediction==='Glaucoma') {setPrdmsg('Glaucoma Detected'); setprdmsgvar('warning');}
+        else {setPrdmsg('Glaucoma not Detected'); setprdmsgvar('success');};
       });
     });
 
@@ -112,7 +122,7 @@ function FundusImagePrediction(props) {
                   </Form.Select>
                 </Form.Group>
 
-                <Alert key='prdmsg' variant='primary'>
+                <Alert key='prdmsg' variant={prdmsgvar}>
                   Prediction: {prdmsg}
                 </Alert>
                 

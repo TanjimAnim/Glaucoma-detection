@@ -3,7 +3,7 @@ from flask_bcrypt import Bcrypt
 from flask_cors import CORS, cross_origin
 import os
 from config import ApplicationConfig
-from models import db, User
+from models import db, User, Image
 
 app = Flask(__name__)
 app.config.from_object(ApplicationConfig)
@@ -65,6 +65,53 @@ def login():
         "email": user.email,
         "error": "none"
     })
+    
+@app.route('/upload',methods=['POST'])
+def upload():
+    uid=request.form.get('id')
+    file = request.files['file']
+    eye=request.form.get('eye')
+    filename=file.filename
+    target=''
+    filepath=''
+    
+    if request.form.get('save')=='yes':
+        target=os.path.join(UPLOAD_FOLDER,uid)
+        if not os.path.isdir(target):
+            os.mkdir(target)
+        date=request.form.get('date')
+        exten=''
+        if '.jpg' in filename:
+            exten=".jpg"
+        else: exten=''
+        filename=eye+date+exten
+        filepath=os.path.join(target,filename)
+        if os.path.exists(filepath):
+            os.remove(filepath)
+        imgentry = Image.query.filter(Image.uid==uid and Image.date==date and Image.eye==eye).first()
+
+        if imgentry is None:
+            imgentry = Image(uid=uid,date=date,eye=eye,path=filepath)
+            db.session.add(imgentry)
+            db.session.commit()
+    else:
+        target=os.path.join(UPLOAD_FOLDER,uid,'temp')
+        if not os.path.isdir(target):
+            os.mkdir(target)
+        if '.jpg' in filename:
+            exten=".jpg"
+        else: exten=''
+        filename='temp'+exten
+        filepath=os.path.join(target,filename)
+        if os.path.exists(filepath):
+            os.remove(filepath)
+    
+    file.save(filepath)
+    
+    prediction='Glaucoma'
+    
+    print(file)
+    return {"rediction": prediction}
 
 
 
@@ -95,7 +142,6 @@ def up():
 @app.route('/dow')
 def dow():
     return send_file('./Uploads/C100P61ThinF_IMG_20150918_144104_cell_165.png',download_name='a.png',as_attachment=True)
-    
 
 if __name__ == "__main__":
     app.run(debug=True)

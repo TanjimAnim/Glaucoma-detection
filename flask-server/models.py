@@ -14,3 +14,11 @@ class User(db.Model):
     reg_year = db.Column(db.String(4), nullable=False)
     gender = db.Column(db.String(1), nullable=False)
     age = db.Column(db.Integer, nullable=False)
+    
+class Image(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    uid = db.Column(db.String(32), nullable=False)
+    date = db.Column(db.String(32), nullable=False)
+    eye = db.Column(db.String(1), nullable=False)
+    path = db.Column(db.String(345), nullable=False)
+     
