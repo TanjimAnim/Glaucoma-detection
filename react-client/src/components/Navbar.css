@@ -1,6 +1,6 @@
 
 .navbar {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+  background: linear-gradient(90deg, rgb(159, 226, 177) 0%, rgb(56, 51, 51) 100%);
   height: fit-content;
   display: flex;
   align-items: center;
@@ -9,7 +9,8 @@
   top: 0;
   z-index: 999;
   color: #fff;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+  font-family: Cursive;
   width: auto;
   border-radius: 5px;
   margin: 10px;

@@ -126,7 +126,7 @@ function FundusImagePrediction(props) {
                   Prediction: {prdmsg}
                 </Alert>
                 
-                <Button variant="primary" type="submit" onClick={predict} size="lg" style={{width:"100%"}}>
+                <Button variant="success" type="submit" onClick={predict} size="lg" style={{width:"100%", marginTop: '5%'}}>
                   {upldmsg}
                 </Button>
             </Form>

@@ -5,6 +5,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
+import bg1 from '../images/bg1.jpg'
 import Form from 'react-bootstrap/Form';
 import Toast from 'react-bootstrap/Toast';
 import { useNavigate } from 'react-router-dom';
@@ -24,6 +25,10 @@ function Home(props) {
   const [toastMessage, setToastMeassage] = useState("");
 
   const navigate = useNavigate();
+
+
+
+
 
   let navOnclick = e =>{
     setSignSelect(!signSelect)
@@ -106,7 +111,10 @@ function Home(props) {
   }
 
   return (
+   
     <>
+    <div className="wrapperContainer" style={ { background: 'url("../images/bg1.jpg") no-repeat center center fixed' } }> 
+   
       <Navbar selectLogin={signSelect} onClick={navOnclick}/>
       <div className='wrap-main'>
       <Toast show={toastVis} onClose={ e => {setToastVis(!toastVis)} }>
@@ -122,7 +130,7 @@ function Home(props) {
         <Toast.Body>{toastMessage}</Toast.Body>
       </Toast>
       <ButtonGroup className='btngrp'>
-        <ToggleButton
+        <ToggleButton 
           type="radio"
           variant={'outline-success'}
           name="radio"
@@ -142,7 +150,7 @@ function Home(props) {
 
       <Form className={signSelect?"pad wi":"no-display"}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label class="font-weight-bold">Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" isInvalid={vemail} value={email} onChange={e=>setEmail(e.target.value)}/>
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
@@ -159,10 +167,11 @@ function Home(props) {
             Invalid Password.
           </Form.Control.Feedback>
         </Form.Group>
-
-        <Button variant="primary" type="submit" onClick={loginB} size="lg" style={{width:"50%", marginLeft:"auto", marginRight:"auto"}}>
+        
+        <Button variant="success" class="btn btn-success btn-lg btn-block"  type="submit" onClick={loginB} size="lg" style={{width:"100%", marginLeft:"auto", marginRight:"auto", marginTop: '5%'}}>
           Log In
         </Button>
+       
       </Form>
       
       <Form className={!signSelect?"pad":"no-display"}>
@@ -201,14 +210,15 @@ function Home(props) {
           </Form.Select>
         </Form.Group>
 
-        <Button variant="primary" type="submit" onClick={register} size="lg" style={{width:"50%", marginLeft:"auto", marginRight:"auto"}}>
+        <Button variant="success" type="submit" onClick={register} size="lg" style={{width:"100%", marginLeft:"auto", marginRight:"auto",  marginTop: '5%'}}>
           Register
         </Button>
       </Form>
 
       </div>
-
+      </div>
     </>
+    
   )
 }
 

@@ -1,3 +1,7 @@
+/* .body {
+    background-color: rgb(173, 212, 200);
+  } */
+
 .wrap-main{
     display: flex;
     align-items: center;
@@ -41,7 +45,7 @@ input{
 .uploadimage{
     height: 30px;
     width: fit-content;
-    background-color: grey;
+    background-color:  rgb(129, 193, 146) ;
     text-align: center;
     border-radius: 5px;
     margin-left: auto;

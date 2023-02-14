@@ -13,7 +13,7 @@ function SNavbar(props) {
     <>
         <nav className='navbar'>
             <div className='navbar-container'>
-                <img src={require('../images/eye-logo2.png')} alt='' className='navbar-Logo'></img>
+                <img src={require('../images/logo71.png')} alt='' className='navbar-Logo'></img>
                 <label className='glaucoma-label'>Glaucoma</label>
                 <div className='menu-icon' onClick = {() => setClick(!click)}>
                     <i className= {click ? 'fas fa-times' : 'fas fa-bars'}></i>
