@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import Home from './pages/Home';
-import Login from './components/Login_signUp/Login';
-import SignUp from './components/Login_signUp/SignUp';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Router, Routes } from "react-router-dom"
 import RouteContainer from './RouteContainer';
@@ -15,14 +13,15 @@ root.render(
   <>
     
     <BrowserRouter>
-      <Routes>
-       <Route path='/' element={<Home />} /> 
+      {/*  <Routes>
+      <Route path='/' element={<Home />} /> 
       {/* <Route path='/' element={<Login/>} /> */}
-      {/* <Route path='/SignUp' element={<SignUp/>} /> */}
+      {/* <Route path='/SignUp' element={<SignUp/>} /> 
            <Route path='/home' element={<Home />} /> 
           <Route path='/app' element={<App/>} />
-      </Routes>
-      <ToastContainer
+      </Routes> */}
+
+       <ToastContainer
       position="top-right"
       autoClose={5000}
       hideProgressBar={false}
@@ -32,7 +31,7 @@ root.render(
       pauseOnFocusLoss
       draggable
       pauseOnHover
-      theme="colored" />
+      theme="colored" />  
       <RouteContainer/>
     </BrowserRouter>
   </>
