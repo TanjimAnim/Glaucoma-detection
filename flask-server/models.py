@@ -21,4 +21,5 @@ class Image(db.Model):
     date = db.Column(db.String(32), nullable=False)
     eye = db.Column(db.String(1), nullable=False)
     path = db.Column(db.String(345), nullable=False)
+    prediction = db.Column(db.String(1), nullable=False)
      

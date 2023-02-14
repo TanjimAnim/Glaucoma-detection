@@ -28,15 +28,14 @@ function Features(props) {
         </div>
 
         <div style={{paddingLeft:'30px', paddingRight:'30px',paddingTop:'10px',paddingBottom:'10px'}}>
-          <Card bg='dark' text='white' style={{ width: '18rem'}}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+          <Card bg='dark' text='white' style={{ width: '18rem',}}>
+          <Card.Img variant="top" src={require('../images/clinical-logo.jpg')} style={{minHeight:"10rem"}}/>
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>Predict with Clinincal Data</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+                Gives prediction whether an eye is diagnosed with Glaucoma. Requires Clinical data of the eye.
               </Card.Text>
-              <Button variant="primary">Go somewhere</Button>
+              <Button variant="primary" onClick={e=>{navigate('/clinicalDataPrediction')}}>Take me there</Button>
             </Card.Body>
           </Card>
         </div>

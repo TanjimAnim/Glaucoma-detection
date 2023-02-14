@@ -88,12 +88,7 @@ def upload():
         filepath=os.path.join(target,filename)
         if os.path.exists(filepath):
             os.remove(filepath)
-        imgentry = Image.query.filter(Image.uid==uid and Image.date==date and Image.eye==eye).first()
 
-        if imgentry is None:
-            imgentry = Image(uid=uid,date=date,eye=eye,path=filepath)
-            db.session.add(imgentry)
-            db.session.commit()
     else:
         target=os.path.join(UPLOAD_FOLDER,uid,'temp')
         if not os.path.isdir(target):
@@ -108,7 +103,17 @@ def upload():
     
     file.save(filepath)
     
-    prediction='Glaucoma'
+    prediction='1'
+    
+    if request.form.get('save')=='yes':
+        imgentry = Image.query.filter(Image.uid==uid and Image.date==date and Image.eye==eye).first()
+        if imgentry is None:
+            imgentry = Image(uid=uid,date=date,eye=eye,path=filepath,prediction=prediction)
+            db.session.add(imgentry)
+            db.session.commit()
+        else:
+            imgentry.prediction = prediction
+            db.session.commit() 
     
     print(file)
     return {"rediction": prediction}
