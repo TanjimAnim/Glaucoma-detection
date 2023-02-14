@@ -9,6 +9,7 @@ import bg1 from '../images/bg1.jpg'
 import Form from 'react-bootstrap/Form';
 import Toast from 'react-bootstrap/Toast';
 import { useNavigate } from 'react-router-dom';
+import background from "../images/bg1.jpg";
 
 function Home(props) {
 
