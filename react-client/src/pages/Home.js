@@ -9,7 +9,6 @@ import bg1 from '../images/bg1.jpg'
 import Form from 'react-bootstrap/Form';
 import Toast from 'react-bootstrap/Toast';
 import { useNavigate } from 'react-router-dom';
-import background from "../images/bg1.jpg";
 
 function Home(props) {
 
@@ -114,14 +113,14 @@ function Home(props) {
   return (
    
     <>
-    <div className="wrapperContainer" style={ { background: 'url("../images/bg1.jpg") no-repeat center center fixed' } }> 
+    {/* <div className="wrapperContainer" style={ { background: 'url("../images/bg1.jpg") no-repeat center center fixed' } }>  */}
    
       <Navbar selectLogin={signSelect} onClick={navOnclick}/>
       <div className='wrap-main'>
       <Toast show={toastVis} onClose={ e => {setToastVis(!toastVis)} }>
         <Toast.Header>
           <img
-            src={require('../images/eye_logo.png')}
+            src={require('../images/logo71.png')}
             className="rounded me-2 sm"
             alt=""
           />
@@ -217,7 +216,7 @@ function Home(props) {
       </Form>
 
       </div>
-      </div>
+      
     </>
     
   )

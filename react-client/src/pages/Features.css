@@ -3,10 +3,17 @@
 }
 .title{
     font-family: cursive;
-    color: rgb(174, 208, 197);
+    color: rgb(56, 58, 57);
 }
-/* .card-body{
-    width: '18rem';
-    background-color: aqua;
+.card-body{
+    /* width: '18rem'; */
+    background-color: rgb(132, 166, 166); 
+} 
+
+.card-btn{
+    color: white;
     
-}  */
+    background-color: rgb(74, 96, 85); 
+     /* rgb(75, 176, 175); */
+    font-family: fantasy;
+}
