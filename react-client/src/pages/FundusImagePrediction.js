@@ -99,7 +99,7 @@ function FundusImagePrediction(props) {
                   <Form.Label>Date of Image taken</Form.Label>
                   <Form.Control type='date' placeholder='Date of Image taken' isInvalid={ivDate} onChange={(e)=>{setDate(e.target.value);setIvDate(false);}}/>
                   <Form.Text className="text-muted">
-                    Will be ignored If chosen not to save in database.
+                    Will be ignored If chosen not to save in database. If image data exists on the same date, then previous data will be updated with current one.
                   </Form.Text>
                   <Form.Control.Feedback type="invalid">
                     Please select a Date.

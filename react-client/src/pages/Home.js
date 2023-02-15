@@ -5,10 +5,11 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
-import bg1 from '../images/bg1.jpg'
+// import bg1 from '../images/bg1.jpg'
 import Form from 'react-bootstrap/Form';
 import Toast from 'react-bootstrap/Toast';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 function Home(props) {
 
@@ -58,13 +59,15 @@ function Home(props) {
       resp.json().then(data => {
         if(data.error==="none"){
           props.setId(data.id);
-          setToastVis(true);
+          // setToastVis(true);
           setToastMeassage("SignIn Successful");
+          toast.success("Sign in Successful");
           
           navigate('/features');
         }else{
-          setToastVis(true);
-          setToastMeassage("Wrong Credential Information");
+          // setToastVis(true);
+          // setToastMeassage("Wrong Credential Information");
+          toast.warning("Wrong credential information");
         }
       })
     })
@@ -100,11 +103,13 @@ function Home(props) {
     }).then(resp => {
       resp.json().then(data => {
         if(data.error==="none"){
-          setToastVis(true);
-          setToastMeassage("User created");
+          // setToastVis(true);
+          // setToastMeassage("User created");
+          toast.info("User created");
         }else{
-          setToastVis(true);
-          setToastMeassage("User Already Registered");
+          // setToastVis(true);
+          // setToastMeassage("User Already Registered");
+          toast.info("User Already Registered");
         }
       })
     })

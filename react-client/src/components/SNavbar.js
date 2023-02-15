@@ -1,8 +1,6 @@
 import React,{useState} from 'react';
 import './Navbar.css';
-import { Link, Route, Routes, useNavigate } from 'react-router-dom';
-import Home from '../pages/Home';
-import App from '../App';
+import { useNavigate } from 'react-router-dom';
 
 function SNavbar(props) {
    const [click, setClick] = useState(false);
