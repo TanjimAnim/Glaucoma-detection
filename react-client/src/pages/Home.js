@@ -5,7 +5,6 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
-import bg1 from '../images/bg1.jpg'
 import Form from 'react-bootstrap/Form';
 import Toast from 'react-bootstrap/Toast';
 import { useNavigate } from 'react-router-dom';
