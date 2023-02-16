@@ -26,7 +26,7 @@ function App() {
   };
 
   let meow = (e) => {
-    let url = "http://localhost:5000/dow";
+    // let url = "http://localhost:5000/dow";
     const aTag = document.createElement("a");
     aTag.href = "http://localhost:5000/dow";
     aTag.setAttribute(
