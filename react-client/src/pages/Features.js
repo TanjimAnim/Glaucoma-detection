@@ -23,7 +23,7 @@ function Features(props) {
               <Card.Text className='text'>
               Here you can provide fundus images, and our system will use that data to predict whether you may be at risk for glaucoma. 
               </Card.Text>
-              <Button className='card-btn' variant="outline-success" onClick={e=>{navigate('/fundusImagePrediction')}}>Let's Try !</Button>
+              <Button className='card-btn' variant='outline-success' onClick={e=>{navigate('/fundusImagePrediction')}}>Let's Try !</Button>
             </Card.Body>
           </Card>
         </div>
@@ -36,7 +36,7 @@ function Features(props) {
               <Card.Text className='text'>
               Here you can provide   your eye history, and our system will use that data to predict whether you may be at risk for glaucoma.         
               </Card.Text>
-              <Button className='card-btn' variant="outline-success" onClick={e=>{navigate('/clinicalDataPrediction')}}>Let's Try !</Button>
+              <Button className='card-btn' variant='outline-success'  onClick={e=>{navigate('/clinicalDataPrediction')}}>Let's Try !</Button>
             </Card.Body>
           </Card>
         </div>
@@ -49,7 +49,7 @@ function Features(props) {
               <Card.Text className='text'>
               Here you can provide fundus image and history, system will use that data to predict whether you may be at risk for glaucoma. 
               </Card.Text>
-              <Button className='card-btn' variant="outline-success" onClick={e=>{navigate('/clinicalDataPrediction')}}>Let's Try !</Button>
+              <Button className='card-btn' variant='outline-success' onClick={e=>{navigate('/clinicalDataPrediction')}}>Let's Try !</Button>
             </Card.Body>
           </Card>
         </div>

@@ -133,16 +133,18 @@ function Home(props) {
         </Toast.Header>
         <Toast.Body>{toastMessage}</Toast.Body>
       </Toast>
-      <ButtonGroup className='btngrp'>
-        <ToggleButton 
+     <ButtonGroup className='btngrp'>
+        <ToggleButton
+        className='btn-1' 
           type="radio"
-          variant={'outline-success'}
+          variant={'outline-success'}  
           name="radio"
           checked={signSelect}
           onChange={e => {}}
           onClick={ e => setSignSelect(true) }
         >Sign In</ToggleButton>
         <ToggleButton
+        className='btn-2'
           type="radio"
           variant={'outline-success'}
           name="radio"
@@ -150,11 +152,11 @@ function Home(props) {
           onChange={e => {}}
           onClick={ e => setSignSelect(false) }
         >Register</ToggleButton>
-      </ButtonGroup>
+      </ButtonGroup> 
 
       <Form className={signSelect?"pad wi":"no-display"}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label class="font-weight-bold">Email address</Form.Label>
+          <Form.Label className='text-label' class="font-weight-bold">Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" isInvalid={vemail} value={email} onChange={e=>setEmail(e.target.value)}/>
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
@@ -172,7 +174,7 @@ function Home(props) {
           </Form.Control.Feedback>
         </Form.Group>
         
-        <Button variant="success" class="btn btn-success btn-lg btn-block"  type="submit" onClick={loginB} size="lg" style={{width:"100%", marginLeft:"auto", marginRight:"auto", marginTop: '5%'}}>
+        <Button className='btn-home' variant="success" class="btn btn-success btn-lg btn-block"  type="submit" onClick={loginB} size="lg" style={{width:"100%", marginLeft:"auto", marginRight:"auto", marginTop: '5%'}}>
           Log In
         </Button>
        
@@ -214,7 +216,7 @@ function Home(props) {
           </Form.Select>
         </Form.Group>
 
-        <Button variant="success" type="submit" onClick={register} size="lg" style={{width:"100%", marginLeft:"auto", marginRight:"auto",  marginTop: '5%'}}>
+        <Button className='btn-home' variant="success" type="submit" onClick={register} size="lg" style={{width:"100%", marginLeft:"auto", marginRight:"auto",  marginTop: '5%'}}>
           Register
         </Button>
       </Form>

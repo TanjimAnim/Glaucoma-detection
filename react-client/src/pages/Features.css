@@ -11,9 +11,10 @@
 } 
 
 .card-btn{
-    color: white;
-    
-    background-color: rgb(74, 96, 85); 
-     /* rgb(75, 176, 175); */
-    font-family: fantasy;
+    /* background-color: rgb(74, 96, 85) !important;  */
+    background-color:  rgb(25, 100, 93) !important;
+    font-family: fantasy !important;
+    color: white !important;
 }
+
+
