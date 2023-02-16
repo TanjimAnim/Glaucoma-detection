@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 // import App from './App';
 // import Home from './pages/Home';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
 import RouteContainer from './RouteContainer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

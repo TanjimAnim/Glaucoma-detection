@@ -1,8 +1,5 @@
 import React,{useState} from 'react';
 import './Navbar.css';
-import { Link, Route, Routes } from 'react-router-dom';
-import Home from '../pages/Home';
-import App from '../App';
 
 function Navbar(props) {
    const [click, setClick] = useState(false);
